@@ -3,9 +3,8 @@ class WelcomeController < ApplicationController
   end
 
   def login
-    respond_to do |format|
-      format.js
-      format.html
-    end
+  end
+
+  def signup
   end
 end
