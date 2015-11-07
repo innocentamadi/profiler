@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  root "welcome#index"
   get "welcome/login" => "welcome#login", as: :login
 
+
+  resources :users
+  resources :profile
   resources :portfolio
+
   # The priority is based upon order of creation: first created -> highest priority.
+  root "welcome#index"
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
