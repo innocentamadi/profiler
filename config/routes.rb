@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "welcome#index"
   get "welcome/login" => "welcome#login", as: :login
 
+  resources :portfolio
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
