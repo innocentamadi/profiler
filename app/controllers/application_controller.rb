@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
     def authenticate_user
       unless current_user
         flash[:notice] = "You need to log in"
-        redirect_to (root_path)reload!
+        redirect_to (root_path)
       end
     end
 end
