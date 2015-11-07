@@ -16,11 +16,16 @@
 !/log/.keep
 /tmp
 
+<<<<<<< HEAD
 # Ignore application configuration
 /config/application.yml
 
 .DS_Store
 */.DS_Store
 
+=======
+>>>>>>> Add repo model and integrated with github api
 # Ignore application configuration
 /config/application.yml
+.DS_Store
+*/.DS_Store

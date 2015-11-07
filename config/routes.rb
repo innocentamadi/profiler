@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get "welcome/login" => "welcome#login", as: :login
 
+  get "welcome/fetch_repo" => "welcome#fetch_repo"
+
   resources :users
   resources :portfolio
   root "welcome#index"
