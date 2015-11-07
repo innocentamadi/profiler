@@ -100,7 +100,7 @@
     #Typography
     ========================================================================== */
 
- 	body {
+ 	.user-profile-body {
  		overflow: hidden;
  		background-color: #fff;
  		color: #5f5f5f;
@@ -485,3 +485,6 @@
 
  /* #Misc
     ========================================================================== */
+    .user-details {
+        padding-bottom: 80px !important;
+    }
