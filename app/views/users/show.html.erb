@@ -18,7 +18,7 @@
                                 <h1 class="editable">
                                   <%= render partial: "users/user_info", locals: {option: "fullname"} %>
                                 </h1>
-                                <p><span>Profession Description</span>
+                                <p><span><%= (@basic_profile.headline if @basic_profile) || "Your Occupation" %></span>
                                 </p>
                             </div>
                             <!-- end .headline -->
@@ -72,8 +72,8 @@
                                         </div>
                                     </div>
 
-                                    <% 3.times do %>
-                                      <%= render "users/work_experience" %>
+                                    <% @positions.each do |p| %>
+                                      <%= render("users/work_experience", position: p ) %>
                                     <% end %>
                                 </div>
                             </div>
@@ -102,10 +102,10 @@
                         </div>
                     </div>
 
-
+<!--
                                                         <% 3.times do %>
-                                                          <%= render "users/work_experience" %>
-                                                        <% end %>
+                                                          <%#= render "users/work_experience" %>
+                                                        <% end %> -->
 
                 </div>
             </div>

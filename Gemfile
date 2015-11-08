@@ -35,9 +35,11 @@ gem 'activerecord-import'
 gem "figaro"
 gem 'responders'
 gem 'omniauth-linkedin'
+# gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-github'
 gem 'linkedin'
 gem "github_api"
+gem 'pry-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

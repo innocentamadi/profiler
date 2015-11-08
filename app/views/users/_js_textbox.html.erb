@@ -3,9 +3,10 @@
   field_to_edit ||= "Something's wrong. Please retry."
   default_text = @current_user.fullname if field_to_edit == "fullname"
   placeholder ||= "Edit #{field_to_edit}"
+  size ||= {rows: 1}
 %>
 
-<% size = field_to_edit == "fullname" ? {rows: 1} : {} %>
+<% # size = field_to_edit == "fullname" ? {rows: 1} : {} %>
   <%=form_for request_path, html: {id: "edit_user_form"}, remote: true do |f| %>
     <div class="js-textbox">
        <div class="form-group">

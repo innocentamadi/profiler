@@ -1,6 +1,6 @@
 <% option ||= "" %>
 <div id="user_<%= option %>" class="user-edits">
-  <% if @user[option] %>
+  <% if option != "fullname" %>
    <%= render partial: "current_user_prop", locals: {option: option} %>
   <% else %>
    <%= render("users/add_#{option}") %>

@@ -43,15 +43,16 @@
                                 <div class="ewf-wrapper">
                                     <ul class="personal-details ">
                                       <li>Name:
-                                        <span class="fullname"><%= render partial: "users/user_info", locals: {option: "fullname"} %><span>
-                                      </li>
+                                        <span class="fullname">
+                                          <%= render partial: "users/user_info", locals: {option: "fullname"} %>
+                                        <span>
                                         <li>
-                                          Date of birth: <%= render partial: "users/user_info", locals: {option: "fullname"} %>
+                                          Date of birth: <%= render partial: "users/user_info", locals: {option: "dob"} %>
                                         </li>
-                                        <li>Nationality: Citizen of Envato</li>
-                                        <li>Address: 23 High Hope Blvd. Some City</li>
-                                        <li>Phone: (123) - 456-7890</li>
-                                        <li>Email: john.smith@jbs.com</li>
+                                        <li>Nationality: <%= render partial: "users/user_info", locals: {option: "nationality"} %></li>
+                                        <li>Address: <%= render partial: "users/user_info", locals: {option: "address"} %></li>
+                                        <li>Phone: <%= render partial: "users/user_info", locals: {option: "phone_number"} %></li>
+                                        <li>Email: <%= render partial: "users/user_info", locals: {option: "email"} %></li>
                                     </ul>
                                 </div>
                             </div>
@@ -62,14 +63,18 @@
                                     <div class="wpb_text_column wpb_content_element ">
                                         <div class="ewf-wrapper">
                                             <h3 class="text-uppercase">Profesional Profile</h3>
-                                            <p>
+                                            <!-- <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare sem sed quam tempus aliquet vitae eget dolor. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit. Quisque varius eros ac
                                                 purus dignissim.
                                             </p>
                                             <p>
                                                 Praesent sit amet massa suscipit, auctor sapien non, egestas felis. Maecenas mattis aliquet est vitae dignissim. Suspendisse aliquam lacus mauris, id placerat felis faucibus quis. Suspendisse potenti. Etiam mattis, eros id porta iaculis.
-                                            </p>
-
+                                            </p> -->
+                                            <% if @basic_profile && @basic_profile.summary %>
+                                              <%= simple_format(@basic_profile.summary) %>
+                                            <% else %>
+                                              <%= render partial: "users/user_info", locals: {option: "bio"} %>
+                                            <% end %>
                                         </div>
                                     </div>
                                 </div>
