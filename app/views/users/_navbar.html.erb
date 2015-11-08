@@ -1,0 +1,70 @@
+
+        <div class="sticky-wrapper">
+            <div id="nav" class="">
+
+                <div class="ewf-row">
+                    <div class="ewf-span3">
+
+                        <!-- // Logo // -->
+                        <!-- <a href="http://bitpublimedia.ro/themeforest/versus-resume-wp/" id="logo">
+                            John Smith
+                        </a> -->
+                        <%= link_to @user.first_name, user_path(@user), id: 'logo' %>
+
+                    </div>
+                    <!-- end .ewf-span3 -->
+                    <div class="ewf-span9 no-space">
+
+                        <a href="#" id="mobile-menu-trigger" class="mobile-menu-closed">
+                            <i class="fa fa-bars"></i>
+                        </a>
+
+                        <!-- // Menu // -->
+                        <ul id="menu" class="sf-menu fixed sf-js-enabled">
+                              <%#= link_github %>
+                              <%= unlinked_account if current_user == @user %>
+
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20 active">
+                                <a title="Personal Details" href="#personal-details" rel="page-20">
+                                    <span>Personal Details</span>
+                                </a>
+                            </li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21">
+                                <a title="Experience" href="#experience" rel="page-21">
+                                    <span>Experience</span>
+                                </a>
+                            </li>
+                            <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22">
+                                <a title="Education" href="#education" rel="page-22">
+                                    <span>Education</span>
+                                </a>
+                            </li> -->
+                            <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23">
+                                <a title="References" href="#references" rel="page-23">
+                                    <span>References</span>
+                                </a>
+                            </li> -->
+                            <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24">
+                                <a title="Skills" href="#skills" rel="page-24">
+                                    <span>Skills</span>
+                                </a>
+                            </li> -->
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25">
+                                <a title="Portfolio" href="#portfolio" rel="page-25">
+                                    <span>Portfolio</span>
+                                </a>
+                            </li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26">
+                                <a title="Contact" href="#contact" rel="page-26">
+                                    <span>Contact</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end .ewf-span9 -->
+                </div>
+                <!-- end .ewf-row -->
+
+            </div>
+        </div>
+        <!-- end #nav -->
