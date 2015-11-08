@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107135037) do
+ActiveRecord::Schema.define(version: 20151108012145) do
+
+  create_table "repos", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -20,8 +28,14 @@ ActiveRecord::Schema.define(version: 20151107135037) do
     t.string   "address"
     t.string   "bio"
     t.string   "avatar"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "profile_url"
+    t.string   "uid"
+    t.string   "oauth_token"
+    t.string   "oauth_token_expires"
+    t.string   "provider"
+    t.string   "email"
   end
 
 end
