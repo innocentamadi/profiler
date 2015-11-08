@@ -15,8 +15,6 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require thirdparty/js.js
-//= require editable/bootstrap-editable
-//= require editable/rails
 //= require_tree .
 
 $(document).ready(function(){
