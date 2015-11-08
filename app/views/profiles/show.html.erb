@@ -1,0 +1,209 @@
+
+<div id="wrap" class="user-profile-body">
+
+    <div id="header">
+
+        <!-- /// HEADER  //////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <div class="ewf-header-image-option ewf-full-width-section parallax full-screen parallax-enabled" style="min-height: 361px; background-image: url(http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/12/1920x1280.jpg); background-position: 49% 0px;">
+
+            <div class="parallax-content full-screen" style="min-height: 361px;">
+                <div class="parallax-overlay" style="background-image:url(http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/themes/vresume-wp/layout/images/pattern.png);"></div>
+                <div class="parallax-content-inner">
+
+                    <div class="ewf-row">
+                        <div class="ewf-span12 text-center">
+
+                            <div class="headline">
+                              <div class="btn btn-success">
+                                Connect With LinkedIn
+                              </div>
+                                <h1>CLICK TO TYPE YOUR NAME</h1>
+                                <h1>
+                                <%= render partial: "users/user_info", locals: {option: "fullname"} %>
+                                </h1>
+                                <p><span>Profession Description</span>
+                                </p>
+                            </div>
+                            <!-- end .headline -->
+
+                        </div>
+                        <!-- end .ewf-span12 -->
+                    </div>
+                    <!-- end .ewf-row -->
+
+                </div>
+                <!-- end .parallax-content-inner --><a href="#personal-details"><i class="ifc-down4"></i></a>
+            </div>
+            <!-- end .parallax-content -->
+
+        </div>
+        <!-- end .parallax -->
+
+        <%= render "users/navbar" %>
+        <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    </div>
+    <!-- end #header -->
+    <div id="content">
+
+        <!-- /// CONTENT  //////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <%= render "users/personal_details" %>
+
+        <div class="ewf-inline-style">
+            <style media="all" type="text/css">
+                .vc_custom_1416488858122 {
+                    padding-top: 110px !important;
+                    padding-bottom: 80px !important;
+                    background-color: #f6f6f6 !important;
+                }
+            </style>
+        </div>
+
+        <div class="ewf-full-width-section nospacing">
+            <div id="experience" class="ewf-row vc_custom_1416488858122">
+                <div class="ewf-span12 vc_column_container">
+                    <div class="ewf-wrapper">
+                        <div class="ewf-row">
+                            <div class="ewf-span12 vc_column_container">
+                                <div class="ewf-wrapper">
+                                    <div class="text-center">
+                                        <div class="headline ">
+                                            <p>
+                                                <span style="background-color:#f6f6f6;">My Professional Background</span>
+                                            </p>
+                                            <h1>Work Experience</h1>
+                                        </div>
+                                    </div>
+
+                                    <% @positions.each do |p| %>
+                                      <%= render("users/work_experience", position: p ) %>
+                                    <% end %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ewf-inline-style">
+            <style media="all" type="text/css">
+                .vc_custom_1415888219561 {
+                    padding-top: 110px !important;
+                    padding-bottom: 80px !important;
+                }
+            </style>
+        </div>
+        <div id="education" class="ewf-row vc_custom_1415888219561 nospacing">
+            <div class="ewf-span12 vc_column_container">
+                <div class="ewf-wrapper">
+                    <div class="text-center">
+                        <div class="headline ">
+                            <p><span style="background-color:#fff;">My Education</span>
+                            </p>
+                            <h1>Education</h1>
+                        </div>
+                    </div>
+
+
+                                                        <%# 3.times do %>
+                                                          <%#= render "users/work_experience" %>
+                                                        <%# end %>
+
+                </div>
+            </div>
+        </div>
+        <div class="ewf-inline-style">
+            <style media="all" type="text/css">
+                .vc_custom_1416818165057 {
+                    padding-top: 110px !important;padding-bottom: 110px !important;background-image: url(http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/11/1920x1000.jpg?id=70) !important;}
+            </style>
+        </div>
+
+        <%= render "users/references" %>
+
+        <div class="ewf-inline-style">
+            <style media="all" type="text/css">
+                .vc_custom_1415888636177 {
+                    padding-top: 110px !important;
+                    padding-bottom: 80px !important;
+                    background-color: #f6f6f6 !important;
+                }
+            </style>
+        </div>
+
+        <div class="ewf-full-width-section nospacing">
+            <div id="skills" class="ewf-row vc_custom_1415888636177">
+                <div class="ewf-span12 vc_column_container">
+                    <div class="ewf-wrapper">
+                        <div class="ewf-inline-style">
+                            <style media="all" type="text/css">
+                                .vc_custom_1416491665375 {
+                                    margin-bottom: 0px !important;
+                                }
+                            </style>
+                        </div>
+                        <div class="ewf-row vc_custom_1416491665375">
+                            <div class="ewf-span12 vc_column_container">
+                                <div class="ewf-wrapper">
+                                    <div class="text-center">
+                                        <div class="headline ">
+                                            <p><span style="background-color:#f6f6f6;">What I am good at</span>
+                                            </p>
+                                            <h1>Skills &amp; Knowledge</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <%= render "users/skills" %>
+
+                        <%= render "users/interests" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ewf-inline-style">
+            <style media="all" type="text/css">
+                .vc_custom_1415888829982 {
+                    padding-top: 110px !important;
+                    padding-bottom: 80px !important;
+                }
+            </style>
+        </div>
+
+        <%= render "users/portfolio" %>
+
+        <%= render "users/contact" %>
+        <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    </div>
+    <!-- end #content -->
+
+    <div id="footer">
+        <!-- /// FOOTER     ///////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <div id="footer-middle">
+            <!-- /// FOOTER MIDDLE  //////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <div class="ewf-row">
+                <div class="ewf-span12" id="footer-middle-widget-area-1">
+                    <div id="text-2" class="widget widget_text">
+                        <div class="textwidget">
+                            <p class="text-center last">Copyright © 2015 John Smith</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        </div>
+        <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    </div>
+    <!-- end #footer -->
+
+</div>
+<a id="back-to-top" href="#" class="visible">
+				<i class="fa fa-plus"></i>
+
+        <i class="fa fa-linkedin"></i> or <i class="fa fa-github"></i>
+			</a>

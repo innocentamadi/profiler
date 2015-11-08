@@ -1,0 +1,10 @@
+<% @option ||= "" %>
+<% if @option == "fullname" %>
+  $("#user_<%= @option %>").html('<%=j render ("users/add_fullname") %>');
+  $(".fullname").each(function(){
+    $(this).html("<%= @current_user.fullname%>")
+  })
+<% else %>
+  $("#user_<%= @option %>").html('<%=j render ("users/current_user_prop") %>');
+<% end %>
+$(".parallax.full-screen a").show();

@@ -1,0 +1,28 @@
+<!-- Trigger the modal with a button -->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Login Form</h4>
+      </div>
+      <div class="modal-body">
+        <% sign_in_provider.each do |provider, helper| %>
+          <div class="col-md-5 sso_option">
+            <%= link_to signin_path(provider.to_s), class: "btn btn-lg btn-block btn-social btn-linkedin", style: "color: #fff !important;background-color: #{helper[:class]};" do %>
+              <%= "#{content_tag :i, nil, class: "fa #{helper[:icon_class]} ", style:"color: #fff !important;"} #{helper[:name]}".html_safe %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
