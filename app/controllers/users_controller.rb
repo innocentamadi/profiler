@@ -26,7 +26,6 @@ class UsersController < ApplicationController
   end
 
   def show
-
     @user = current_user || User.find_by_id(params[:id])
     if @user
       @basic_profile = @user.basic_profile

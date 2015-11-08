@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-
+  serialize :languages, Array
   has_many :repos, dependent: :destroy
   has_one :basic_profile, dependent: :destroy
   has_many :positions, dependent: :destroy
@@ -22,13 +22,17 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.fetch_repo(github_username, user_id)
+  def fetch_repo(github_username)
     @repos = []
     github = Github.new
+    lang = []
     @response = github.repos.list user: github_username
     @response.each do |repo|
-      @repos << Repo.new(name: repo.name, description: repo.description, url: repo.html_url, user_id: user_id)
+      @repos << Repo.new(name: repo.name, description: repo.description, url: repo.html_url, forks_url: repo.forks_url, user: self, language: repo.language)
+      lang << repo.language if repo.language
     end
+    self.languages = lang.uniq
+    self.save
 
     Repo.import @repos
   end
