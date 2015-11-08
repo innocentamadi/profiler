@@ -33,7 +33,7 @@
                                     <div class="wpb_single_image wpb_content_element vc_align_left">
                                         <div class="ewf-wrapper">
 
-                                            <img width="270" height="270" src= <%= "#{current_user.profile_url}" %> class=" vc_box_border_grey attachment-full" alt="270x270" />
+                                            <img width="270" height="270" src= <%= "#{@user.profile_url || ""}" %> class=" vc_box_border_grey attachment-full" alt="270x270" />
                                         </div>
                                     </div>
                                 </div>
@@ -42,8 +42,12 @@
                             <div class="ewf-span4 vc_column_container">
                                 <div class="ewf-wrapper">
                                     <ul class="personal-details ">
-                                        <li>Name: John Smith</li>
-                                        <li>Date of birth: 14 February 1986</li>
+                                      <li>Name:
+                                        <span><%= render partial: "users/user_info", locals: {option: "fullname"} %><span>
+                                      </li>
+                                        <li>
+                                          Date of birth: <%= render partial: "users/user_info", locals: {option: "fullname"} %>
+                                        </li>
                                         <li>Nationality: Citizen of Envato</li>
                                         <li>Address: 23 High Hope Blvd. Some City</li>
                                         <li>Phone: (123) - 456-7890</li>

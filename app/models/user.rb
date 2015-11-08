@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
   has_many :repos
 
-  validates_presence_of :username, :email, :password_digest, unless: :guest?
+  # validates_presence_of :email, :password_digest, unless: :guest?
   # validates_uniqueness_of :username, allow_blank: true
   # validates_confirmation_of :password
 
@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   end
 
    def fullname
-     ("#{first_name}" ' ' "#{last_name}".capitalize if first_name && last_name.present?) || ("Guest".capitalize if guest) || ""
+     ("#{first_name}" ' ' "#{last_name}".capitalize if first_name && last_name.present?) || ("Guest".capitalize if guest) || "Type your full name here"
    end
 
     def self.new_guest

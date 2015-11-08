@@ -21,4 +21,13 @@
 
 $(document).ready(function(){
   $('.editable').editable({mode: "inline"});
+
+  $('body').on('DOMNodeInserted', '#js-edit-text', function () {
+    $("#submit-js-edit").hide();
+  });
+
+  $('.editable').on('blur', '#user_fullname form', function(){
+    $('#submit-js-edit').click();
+  })
+
 })

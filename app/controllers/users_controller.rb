@@ -1,4 +1,13 @@
 class UsersController < ApplicationController
+  before_filter :current_user, :except => [:new]
+
+  def index
+    if current_user
+      redirect_to user_path(@current_user.id)
+    else
+      redirect_to root_path
+    end
+  end
 
   def new
     @user = User.new
@@ -17,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user || params[:user]
+    @user = current_user || User.find_by_id(params[:id])
     redirect_to root_url if !@user
   end
 

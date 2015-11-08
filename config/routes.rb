@@ -3,13 +3,19 @@ Rails.application.routes.draw do
 
   get "welcome/fetch_repo" => "welcome#fetch_repo"
 
-  resources :users
+
+  resources :users do
+    get 'edit_user/:option' => "users#edit_user", as: :js_edit
+    post 'edit_user/:option' => "users#update_user", as: :js_update
+  end
   resources :profile
   resources :portfolio
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
   get 'new_guest', to: 'users#create', as: 'new_guest'
+
+
   root "welcome#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
