@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
   has_many :repos
+  has_many :basic_profiles
+  has_many :positions
+  has_many :linkedin_oauth_settings
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -10,6 +13,14 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.oauth_token = auth.credentials.token
       user.save!
+      if user.provider == 'linkedin'
+        user.linkedin_oauth_settings.create(token: auth.credentials.token, secret: auth.credentials.token)
+        binding.pry
+      elsif user.provider == 'github'
+
+      else
+
+      end
     end
   end
 
