@@ -13,6 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require thirdparty/js.js
 //= require bootstrap-sprockets
+//= require thirdparty/js.js
+//= require editable/bootstrap-editable
+//= require editable/rails
 //= require_tree .
+
+$(document).ready(function(){
+  $('.editable').editable({mode: "inline"});
+})

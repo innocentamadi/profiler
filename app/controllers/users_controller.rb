@@ -17,6 +17,14 @@ class UsersController < ApplicationController
   end
 
 
+  private
+
+
+  def user_params
+    # pry.binding
+    params.require(:user).permit(:avatar, :username, :gender, :first_name, :middle_name, :last_name, :bio, :username, :email, :password, :password_confirmation, :option, :fullname) if params.has_key? "user"
+  end
+
   def update_user_info
     if @option == "fullname"
       user_fullname
