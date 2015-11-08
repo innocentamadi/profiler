@@ -29,12 +29,15 @@
                         </div>
                     </div>
                     <ul class="portfolio-items portfolio-strip fixed " data-display="filters-center" data-style="ewf-portfolio-style-1" style="position: relative; height: 626px;">
-                        <li data-id="101" class="item photography video " style="position: absolute; left: 0px; top: 0px;">
+                      <% index = 0 %>
+                      <% current_user.repos.each do |repo|%>
+                        <% index += 1%>
+                        <li data-id="101" class="item photography video" style="">
 
                             <div class="portfolio-item">
 
                                 <div class="portfolio-item-preview">
-                                    <img src="http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/11/11.png" alt="">
+                                    <img src="http://loremflickr.com/328/380?random=<%= index +1%>" alt="">
 
                                     <div class="portfolio-item-overlay">
 
@@ -52,8 +55,8 @@
 
                                 <div class="portfolio-item-description">
 
-                                    <h3>Project 1</h3>
-                                    <p>Project 1 Description</p>
+                                    <h3> <%= repo.name%> </h3>
+                                    <p><%= repo.description %></p>
 
                                 </div>
                                 <!-- end .portfolio-item-description -->
@@ -62,171 +65,8 @@
                             <!-- end .portfolio-item -->
 
                         </li>
-                        <li data-id="100" class="item graphic-design photography " style="position: absolute; left: 313px; top: 0px;">
-
-                            <div class="portfolio-item">
-
-                                <div class="portfolio-item-preview">
-                                    <img src="http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/11/2.png" alt="">
-
-                                    <div class="portfolio-item-overlay">
-
-                                        <div class="portfolio-item-overlay-actions">
-
-                                            <a href="http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/11/2.png" class="magnificPopup-gallery portfolio-item-zoom">+</a>
-                                            <a class="portfolio-item-link" data-id="100" href="#project-100">&gt;</a>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                                <!-- end .portfolio-item-preview -->
-
-                                <div class="portfolio-item-description">
-
-                                    <h3>Project 2</h3>
-                                    <p>Project 2 description</p>
-
-                                </div>
-                                <!-- end .portfolio-item-description -->
-
-                            </div>
-                            <!-- end .portfolio-item -->
-
-                        </li>
-                        <li data-id="99" class="item photography video " style="position: absolute; left: 626px; top: 0px;">
-
-                            <div class="portfolio-item">
-
-                                <div class="portfolio-item-preview">
-                                    <img src="http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/11/3.png" alt="">
-
-                                    <div class="portfolio-item-overlay">
-
-                                        <div class="portfolio-item-overlay-actions">
-
-                                            <a href="http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/11/3.png" class="magnificPopup-gallery portfolio-item-zoom">+</a>
-                                            <a class="portfolio-item-link" data-id="99" href="#project-99">&gt;</a>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                                <!-- end .portfolio-item-preview -->
-
-                                <div class="portfolio-item-description">
-
-                                    <h3>Project 3</h3>
-                                    <p>Project 3 Description</p>
-
-                                </div>
-                                <!-- end .portfolio-item-description -->
-
-                            </div>
-                            <!-- end .portfolio-item -->
-
-                        </li>
-                        <li data-id="98" class="item graphic-design logo photography " style="position: absolute; left: 0px; top: 313px;">
-
-                            <div class="portfolio-item">
-
-                                <div class="portfolio-item-preview">
-                                    <img src="http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/11/4.png" alt="">
-
-                                    <div class="portfolio-item-overlay">
-
-                                        <div class="portfolio-item-overlay-actions">
-
-                                            <a href="http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/11/4.png" class="magnificPopup-gallery portfolio-item-zoom">+</a>
-                                            <a class="portfolio-item-link" data-id="98" href="#project-98">&gt;</a>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                                <!-- end .portfolio-item-preview -->
-
-                                <div class="portfolio-item-description">
-
-                                    <h3>Project 4</h3>
-                                    <p>Project 4 Description</p>
-
-                                </div>
-                                <!-- end .portfolio-item-description -->
-
-                            </div>
-                            <!-- end .portfolio-item -->
-
-                        </li>
-                        <li data-id="97" class="item logo video " style="position: absolute; left: 313px; top: 313px;">
-
-                            <div class="portfolio-item">
-
-                                <div class="portfolio-item-preview">
-                                    <img src="http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/11/5.png" alt="">
-
-                                    <div class="portfolio-item-overlay">
-
-                                        <div class="portfolio-item-overlay-actions">
-
-                                            <a href="http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/11/5.png" class="magnificPopup-gallery portfolio-item-zoom">+</a>
-                                            <a class="portfolio-item-link" data-id="97" href="#project-97">&gt;</a>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                                <!-- end .portfolio-item-preview -->
-
-                                <div class="portfolio-item-description">
-
-                                    <h3>Project 5</h3>
-                                    <p>Project 5 Description</p>
-
-                                </div>
-                                <!-- end .portfolio-item-description -->
-
-                            </div>
-                            <!-- end .portfolio-item -->
-
-                        </li>
-                        <li data-id="96" class="item graphic-design photography " style="position: absolute; left: 626px; top: 313px;">
-
-                            <div class="portfolio-item">
-
-                                <div class="portfolio-item-preview">
-                                    <img src="http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/11/6.png" alt="">
-
-                                    <div class="portfolio-item-overlay">
-
-                                        <div class="portfolio-item-overlay-actions">
-
-                                            <a href="http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/11/6.png" class="magnificPopup-gallery portfolio-item-zoom">+</a>
-                                            <a class="portfolio-item-link" data-id="96" href="#project-96">&gt;</a>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                                <!-- end .portfolio-item-preview -->
-
-                                <div class="portfolio-item-description">
-
-                                    <h3>Project 6</h3>
-                                    <p>Project 6 Description</p>
-
-                                </div>
-                                <!-- end .portfolio-item-description -->
-
-                            </div>
-                            <!-- end .portfolio-item -->
-
-                        </li>
+                        <% break if index >= 6 %>
+                      <% end %>
                     </ul>
                     <div class="ewf-row">
                         <div class="ewf-span12 text-center">
