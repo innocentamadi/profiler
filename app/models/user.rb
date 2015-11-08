@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
   has_many :repos
+  has_one :basic_profile, dependent: :destroy
+  has_many :positions, dependent: :destroy
+  has_many :linkedin_oauths, dependent: :destroy
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -22,5 +25,41 @@ class User < ActiveRecord::Base
     end
 
     Repo.import @repos
+  end
+
+  def create_linkedin_profile(credentials)
+    access= self.linkedin_oauths.first_or_create(token: credentials.token, secret: credentials.secret)
+    @client = LinkedIn::Client.new
+    @client.authorize_from_access(access.token, access.secret)
+    profile = @client.profile( fields:
+        ["first-name", "last-name", "maiden-name",
+        "formatted-name" ,:headline, :location, :industry, :summary,
+        :specialties, :positions, "picture-url", "public-profile-url"]
+    )
+    create_basic_profile(profile)
+  end
+
+  def create_basic_profile(profile)
+    basic_profile = profile.to_hash.reject{|key| key.to_s =~ /positions/}
+    basic_profile[:user] = self
+    basic_profile[:location] = basic_profile["location"]["name"]
+    basic_profile = BasicProfile.create(basic_profile)
+    create_positions(profile.positions.all)
+  end
+
+  def create_positions(positions)
+    all_positions = []
+    positions.each{ |p|
+        user_position = {
+          title: p.title,
+          summary: p.summary,
+          start_date: Date.parse("1/#{p.start_date.month ? p.start_date.month : 1}/#{p.start_date.year}"),
+          is_current: p.is_current,
+          company: p.company.name
+        }
+        user_position[:end_date] = Date.parse("1/#{p.end_date.month ? p.end_date.month : 1}/#{p.end_date.year}") unless p.is_current
+        all_positions << self.positions.new(user_position)
+      }
+      Position.import(all_positions)
   end
 end
