@@ -200,13 +200,14 @@
 </div>
 <a id="back-to-top" href="#" class="visible">
 	<i class="fa fa-plus"></i>
-  <i class="fa fa-linkedin"></i> or <i class="fa fa-github"></i>
-  <% binding.pry %>
-  <% sign_in_provider.each do |provider, helper| %>
-    <div class="col-md-5 sso_option">
-      <%= link_to signin_path(provider.to_s), class: "btn btn-lg btn-block btn-social btn-linkedin", style: "color: #fff !important;background-color: #{helper[:class]};" do %>
-        <%= "#{content_tag :i, nil, class: "fa #{helper[:icon_class]} ", style:"color: #fff !important;"} #{helper[:name]}".html_safe %>
-      <% end %>
-    </div>
-  <% end %>
+  <!-- <i class="fa fa-linkedin"></i> or <i class="fa fa-github"></i> -->
+  <ul>
+    <% sign_in_provider.each do |provider, helper| %>
+      <li>
+        <%= link_to signin_path(provider.to_s), class: "btn btn-lg btn-block btn-social btn-linkedin", style: "color: #fff !important;background-color: #{helper[:class]};" do %>
+          <%= "#{content_tag :i, nil, class: "fa #{helper[:icon_class]} ", style:"color: #fff !important;"} #{helper[:name]}".html_safe %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
 </a>
