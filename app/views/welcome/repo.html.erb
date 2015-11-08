@@ -1,0 +1,12 @@
+<div class="row" style="background-color: grey !important;">
+  <div  style="margin: 30px 10px;">
+    <% @response.each do |repo| %>
+      <% #repo.each do |key, value|%>
+       <div class="col-md-5 ">
+          <pre><%= repo.name %></pre>
+          <label><%= repo.description %></label>
+        </div>
+      <%# end %>
+    <% end %>
+  </div>
+</div>
