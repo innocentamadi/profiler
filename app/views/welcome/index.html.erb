@@ -42,6 +42,15 @@
                     <% end %>
 
 
+                   <li>
+                       <%= link_to "Login", login_path, {:remote => true, class: "page-scroll", "data-target" => "#myModal", "data-toggle" => "modal" } %>
+                   </li>
+                   <li>
+                       <%= link_to "Signup", "#", class: "page-scroll" %>
+                   </li>
+                   <li>
+                       <%= link_to "View Sample", "#", class: "page-scroll" %>
+                   </li>
                </ul>
            </div>
            <!-- /.navbar-collapse -->
@@ -78,12 +87,11 @@
    </section>
 
 
-
    <!-- Footer -->
    <footer>
        <div class="container text-center">
            <p>Copyright &copy; Team Socket 2015</p>
        </div>
    </footer>
+
   <%= render "login_form" %>
-</div>
