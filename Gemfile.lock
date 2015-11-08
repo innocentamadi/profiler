@@ -90,9 +90,13 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     jwt (1.5.2)
 >>>>>>> 87d83837a823db1ed4fb95268862ebf37bf6bcda
+=======
+    jwt (1.5.2)
+>>>>>>> 405a09fe61594511795e7c9bbae5a3459ae8fedf
     linkedin (1.0.0)
       hashie (~> 3.0)
       multi_json (~> 1.0)
@@ -112,7 +116,10 @@ GEM
       mini_portile (~> 0.6.0)
     oauth (0.4.7)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 405a09fe61594511795e7c9bbae5a3459ae8fedf
     oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
       jwt (~> 1.0)
@@ -137,7 +144,10 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+<<<<<<< HEAD
 >>>>>>> 87d83837a823db1ed4fb95268862ebf37bf6bcda
+=======
+>>>>>>> 405a09fe61594511795e7c9bbae5a3459ae8fedf
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -219,11 +229,17 @@ DEPENDENCIES
   jquery-rails
   linkedin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   omniauth-github
   omniauth-linkedin
   pry
 >>>>>>> 87d83837a823db1ed4fb95268862ebf37bf6bcda
+=======
+  omniauth-github
+  omniauth-linkedin
+  pry
+>>>>>>> 405a09fe61594511795e7c9bbae5a3459ae8fedf
   rails (= 4.2.4)
   responders
   sass-rails (~> 5.0)
@@ -233,6 +249,3 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
-
-BUNDLED WITH
-   1.10.6
