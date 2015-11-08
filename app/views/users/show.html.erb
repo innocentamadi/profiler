@@ -1,614 +1,205 @@
-<div class="loader-wrapper">
-    <div class="loader">
-        <div class="cube1"></div>
-        <div class="cube2"></div>
+
+<div id="wrap" class="user-profile-body">
+
+    <div id="header">
+
+        <!-- /// HEADER  //////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <div class="ewf-header-image-option ewf-full-width-section parallax full-screen parallax-enabled" style="min-height: 361px; background-image: url(http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/12/1920x1280.jpg); background-position: 49% 0px;">
+
+            <div class="parallax-content full-screen" style="min-height: 361px;">
+                <div class="parallax-overlay" style="background-image:url(http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/themes/vresume-wp/layout/images/pattern.png);"></div>
+                <div class="parallax-content-inner">
+
+                    <div class="ewf-row">
+                        <div class="ewf-span12 text-center">
+
+                            <div class="headline">
+                                <h1>
+                                <%= render partial: "users/user_info", locals: {option: "fullname"} %>
+                                </h1>
+                                <p><span>Profession Description</span>
+                                </p>
+                            </div>
+                            <!-- end .headline -->
+
+                        </div>
+                        <!-- end .ewf-span12 -->
+                    </div>
+                    <!-- end .ewf-row -->
+
+                </div>
+                <!-- end .parallax-content-inner --><a href="#personal-details"><i class="ifc-down4"></i></a>
+            </div>
+            <!-- end .parallax-content -->
+
+        </div>
+        <!-- end .parallax -->
+
+        <%= render "users/navbar" %>
+        <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
     </div>
+    <!-- end #header -->
+    <div id="content">
+
+        <!-- /// CONTENT  //////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <%= render "users/personal_details" %>
+
+        <div class="ewf-inline-style">
+            <style media="all" type="text/css">
+                .vc_custom_1416488858122 {
+                    padding-top: 110px !important;
+                    padding-bottom: 80px !important;
+                    background-color: #f6f6f6 !important;
+                }
+            </style>
+        </div>
+
+        <div class="ewf-full-width-section nospacing">
+            <div id="experience" class="ewf-row vc_custom_1416488858122">
+                <div class="ewf-span12 vc_column_container">
+                    <div class="ewf-wrapper">
+                        <div class="ewf-row">
+                            <div class="ewf-span12 vc_column_container">
+                                <div class="ewf-wrapper">
+                                    <div class="text-center">
+                                        <div class="headline ">
+                                            <p>
+                                                <span style="background-color:#f6f6f6;">My Professional Background</span>
+                                            </p>
+                                            <h1>Work Experience</h1>
+                                        </div>
+                                    </div>
+
+                                    <% 3.times do %>
+                                      <%= render "users/work_experience" %>
+                                    <% end %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ewf-inline-style">
+            <style media="all" type="text/css">
+                .vc_custom_1415888219561 {
+                    padding-top: 110px !important;
+                    padding-bottom: 80px !important;
+                }
+            </style>
+        </div>
+        <div id="education" class="ewf-row vc_custom_1415888219561 nospacing">
+            <div class="ewf-span12 vc_column_container">
+                <div class="ewf-wrapper">
+                    <div class="text-center">
+                        <div class="headline ">
+                            <p><span style="background-color:#fff;">My Education</span>
+                            </p>
+                            <h1>Education</h1>
+                        </div>
+                    </div>
+
+
+                                                        <% 3.times do %>
+                                                          <%= render "users/work_experience" %>
+                                                        <% end %>
+
+                </div>
+            </div>
+        </div>
+        <div class="ewf-inline-style">
+            <style media="all" type="text/css">
+                .vc_custom_1416818165057 {
+                    padding-top: 110px !important;padding-bottom: 110px !important;background-image: url(http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/11/1920x1000.jpg?id=70) !important;}
+            </style>
+        </div>
+
+        <%= render "users/references" %>
+
+        <div class="ewf-inline-style">
+            <style media="all" type="text/css">
+                .vc_custom_1415888636177 {
+                    padding-top: 110px !important;
+                    padding-bottom: 80px !important;
+                    background-color: #f6f6f6 !important;
+                }
+            </style>
+        </div>
+
+        <div class="ewf-full-width-section nospacing">
+            <div id="skills" class="ewf-row vc_custom_1415888636177">
+                <div class="ewf-span12 vc_column_container">
+                    <div class="ewf-wrapper">
+                        <div class="ewf-inline-style">
+                            <style media="all" type="text/css">
+                                .vc_custom_1416491665375 {
+                                    margin-bottom: 0px !important;
+                                }
+                            </style>
+                        </div>
+                        <div class="ewf-row vc_custom_1416491665375">
+                            <div class="ewf-span12 vc_column_container">
+                                <div class="ewf-wrapper">
+                                    <div class="text-center">
+                                        <div class="headline ">
+                                            <p><span style="background-color:#f6f6f6;">What I am good at</span>
+                                            </p>
+                                            <h1>Skills &amp; Knowledge</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <%= render "users/skills" %>
+
+                        <%= render "users/interests" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ewf-inline-style">
+            <style media="all" type="text/css">
+                .vc_custom_1415888829982 {
+                    padding-top: 110px !important;
+                    padding-bottom: 80px !important;
+                }
+            </style>
+        </div>
+
+        <%= render "users/portfolio" %>
+
+        <%= render "users/contact" %>
+        <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    </div>
+    <!-- end #content -->
+
+    <div id="footer">
+        <!-- /// FOOTER     ///////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <div id="footer-middle">
+            <!-- /// FOOTER MIDDLE  //////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <div class="ewf-row">
+                <div class="ewf-span12" id="footer-middle-widget-area-1">
+                    <div id="text-2" class="widget widget_text">
+                        <div class="textwidget">
+                            <p class="text-center last">Copyright © 2015 John Smith</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        </div>
+        <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    </div>
+    <!-- end #footer -->
+
 </div>
-<div class="go-top"> <a href="#"><i class="fa fa-angle-up"></i></a>
-</div>
-<header>
-    <button class="toggle-btn"> <span class="lines"></span>
-    </button>
-    <div class="menu">
-        <ul class="nav">
-            <li class="active"> <a href="#home">Home</a>
-            </li>
-            <li> <a href="#about">About</a>
-            </li>
-            <li> <a href="#blog">Blog</a>
-            </li>
-            <li> <a href="#resume">Resume</a>
-            </li>
-            <li> <a href="#portfolio">Portfolio</a>
-            </li>
-            <li> <a href="#testimonial">Testimonial</a>
-            </li>
-            <li> <a href="#contact">Contact</a>
-            </li>
-        </ul>
-    </div>
-</header>
-<section id="home" class="fill">
-    <div class="home-background parallax-section">
-        <div class="black-layer">
-            <div class="middle-content">
-                <h1>I'm Kayode Adeniyi</h1>  <span>Software Developer</span>
-            </div>
-            <div class="arrow-down">
-                <a href="#about"> <i class="fa fa-angle-down"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="about">
-    <div class="about-background">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="row">
-                <div class="aboutWrapper col-xs-12 col-sm-6">
-                    <%= image_tag 'avatar.jpg'%>
-                    <div class="about-text">
-                        <h3>I'm a Freelancer</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, pretium quis, sem. Nulla consequat massa quis enim.</p>
-                        <div class="social">
-                            <ul>
-                                <li> <a href="#"><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li> <a href="#"><i class="fa fa-twitter"></i></a>
-                                </li>
-                                <li> <a href="#"><i class="fa fa-linkedin"></i></a>
-                                </li>
-                                <li> <a href="#"><i class="fa fa-instagram"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="skillsWrapper col-xs-12 col-sm-6">
-                    <div id="skill-box">
-                        <h4>HTML5</h4>
-                        <div class="progress">
-                            <div class="progress-bar" data-percent="95"> <span>95%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="skill-box">
-                        <h4>PHP</h4>
-                        <div class="progress">
-                            <div class="progress-bar" data-percent="70"> <span>75%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="skill-box">
-                        <h4>jQuery</h4>
-                        <div class="progress">
-                            <div class="progress-bar" data-percent="80"> <span>80%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="skill-box">
-                        <h4>CSS3</h4>
-                        <div class="progress">
-                            <div class="progress-bar" data-percent="90"> <span>90%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="services-background">
-        <div class="container">
-            <div class="row">
-                <div class="servicesWrapper">
-                    <div id="servicesSlider" class="owl-carousel">
-                        <div class="service-box"> <i class="icon icon-basic-webpage-img-txt"></i>
-                            <p>Web Development</p>
-                        </div>
-                        <div class="service-box"> <i class="icon icon-basic-lightbulb"></i>
-                            <p>Branding</p>
-                        </div>
-                        <div class="service-box"> <i class="icon icon-basic-pencil-ruler"></i>
-                            <p>Web Design</p>
-                        </div>
-                        <div class="service-box"> <i class="icon icon-basic-photo"></i>
-                            <p>Photography</p>
-                        </div>
-                        <div class="service-box"> <i class="icon icon-basic-headset"></i>
-                            <p>Live Support</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="blog">
-    <div class="blog-background">
-        <div class="container">
-            <div class="blogWrapper">
-                <div>
-                    <h2>Recent Blog Posts</h2>
-                    <div class="customNavigation"> <a id="prev"><i class="fa fa-angle-left"></i></a>  <a id="next"><i class="fa fa-angle-right"></i></a>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-                <div class="blog-content">
-                    <div id="blogSlider" class="owl-carousel">
-                        <div class="post-box">
-                            <div class="blog-post">
-                                <div class="imageWrapper">
-                                    <a href="blog.html">
-                                        <%= image_tag 'demo-img-1.jpg'%>
-                                        <div class="post-date">
-                                            <ul>
-                                                <li>Oct</li>
-                                                <li>23</li>
-                                                <li>2015</li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                </div>
-                                <h3><a href="blog.html">Blog Post with Image</a></h3>
-                                <ul class="post-detail">
-                                    <li><a href="#">Photography</a>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-comment-o"></i>2</a>
-                                    </li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus, odio non gravida maximus, eros velit aliquet lacus, a sagittis tortor nisl sed erat.</p>
-                            </div>
-                        </div>
-                        <div class="post-box">
-                            <div class="blog-post">
-                                <div class="imageWrapper">
-                                    <a href="blog.html">
-                                        <%= image_tag 'demo-img-2.jpg'%>
-                                        <div class="post-date">
-                                            <ul>
-                                                <li>Oct</li>
-                                                <li>22</li>
-                                                <li>2015</li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                </div>
-                                <h3><a href="blog.html">Blog Post with Image</a></h3>
-                                <ul class="post-detail">
-                                    <li><a href="#">Travel</a>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-comment-o"></i>2</a>
-                                    </li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus, odio non gravida maximus, eros velit aliquet lacus, a sagittis tortor nisl sed erat.</p>
-                            </div>
-                        </div>
-                        <div class="post-box">
-                            <div class="blog-post">
-                                <div class="imageWrapper">
-                                    <a href="blog.html">
-                                        <%= image_tag 'demo-img-3.jpg'%>
-                                        <div class="post-date">
-                                            <ul>
-                                                <li>Oct</li>
-                                                <li>21</li>
-                                                <li>2015</li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                </div>
-                                <h3><a href="blog.html">Blog Post with Image</a></h3>
-                                <ul class="post-detail">
-                                    <li><a href="#">Lifestyle</a>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-comment-o"></i>2</a>
-                                    </li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus, odio non gravida maximus, eros velit aliquet lacus, a sagittis tortor nisl sed erat.</p>
-                            </div>
-                        </div>
-                        <div class="post-box">
-                            <div class="blog-post">
-                                <div class="imageWrapper">
-                                    <a href="blog.html">
-                                        <%= image_tag 'demo-img-4.jpg'%>
-                                        <div class="post-date">
-                                            <ul>
-                                                <li>Oct</li>
-                                                <li>20</li>
-                                                <li>2015</li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                </div>
-                                <h3><a href="blog.html">Blog Post with Image</a></h3>
-                                <ul class="post-detail">
-                                    <li><a href="#">Business</a>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-comment-o"></i>2</a>
-                                    </li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus, odio non gravida maximus, eros velit aliquet lacus, a sagittis tortor nisl sed erat.</p>
-                            </div>
-                        </div>
-                        <div class="post-box">
-                            <div class="blog-post">
-                                <div class="imageWrapper">
-                                    <a href="blog.html">
-                                        <%= image_tag 'demo-img-5.jpg'%>
-                                        <div class="post-date">
-                                            <ul>
-                                                <li>Oct</li>
-                                                <li>19</li>
-                                                <li>2015</li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                </div>
-                                <h3><a href="blog.html">Blog Post with Image</a></h3>
-                                <ul class="post-detail">
-                                    <li><a href="#">Web Design</a>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-comment-o"></i>2</a>
-                                    </li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus, odio non gravida maximus, eros velit aliquet lacus, a sagittis tortor nisl sed erat.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="resume">
-    <div class="resume-background">
-        <div class="container">
-            <h2>Resume</h2>
-            <div class="row">
-                <div class="educationWrapper col-xs-12 col-md-6">
-                    <div class="resume-box">
-                        <div>
-                            <ul>
-                                <li><i class="icon icon-basic-book"></i>
-                                </li>
-                                <li>2013 - 2014</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>Master Degree</h4>  <span>IT University</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non est ut lorem tincidunt aliquam.</p>
-                        </div>
-                    </div>
-                    <div class="resume-box">
-                        <div>
-                            <ul>
-                                <li><i class="icon icon-basic-book"></i>
-                                </li>
-                                <li>2010 - 2013</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>Bachelor Degree</h4>  <span>IT University</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non est ut lorem tincidunt aliquam.</p>
-                        </div>
-                    </div>
-                    <div class="resume-box">
-                        <div>
-                            <ul>
-                                <li><i class="icon icon-basic-book"></i>
-                                </li>
-                                <li>2007 - 2010</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>Bachelor Degree</h4>  <span>IT University</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non est ut lorem tincidunt aliquam.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="employmentWrapper col-xs-12 col-md-6">
-                    <div class="resume-box">
-                        <div>
-                            <ul>
-                                <li><i class="icon icon-basic-case"></i>
-                                </li>
-                                <li>2014 - Present</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>Web Designer</h4>  <span>ThemeForest</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non est ut lorem tincidunt aliquam.</p>
-                        </div>
-                    </div>
-                    <div class="resume-box">
-                        <div>
-                            <ul>
-                                <li><i class="icon icon-basic-case"></i>
-                                </li>
-                                <li>2013 - 2014</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>Front-End Developer</h4>  <span>ThemeForest</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non est ut lorem tincidunt aliquam.</p>
-                        </div>
-                    </div>
-                    <div class="resume-box">
-                        <div>
-                            <ul>
-                                <li><i class="icon icon-basic-case"></i>
-                                </li>
-                                <li>2012 - 2013</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>Photographer</h4>  <span>PhotoDune</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non est ut lorem tincidunt aliquam.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="portfolio">
-    <div class="portfolio-background">
-        <div class="container">
-            <div>
-                <h2>Portfolio</h2>
-                <ul id="button-group">
-                    <li class="active" data-filter="*">All</li>
-                    <li data-filter=".category-1">Illustrator</li>
-                    <li data-filter=".category-2">Photography</li>
-                </ul>
-            </div>
-            <div class="clearfix"></div>
-            <div id="masonryGrid">
-                <div class="image-box category-1">
-                    <%= image_tag 'portfolio-1.jpg'%>
-                    <div class="image-hover">
-                        <a id="lightbox" href="#popup-1">
-                            <div>
-                                <h3>Project Title</h3>  <span>Illustrator</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div id="popup-1" class="mfp-hide popup-box">
-                        <%= image_tag 'portfolio-1.jpg'%>
-                        <div>
-                            <h3>Project Title</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla consequat massa quis
-                                enim.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="image-box category-2">
-                    <%= image_tag 'portfolio-2.jpg'%>
-                    <div class="image-hover">
-                        <a id="lightbox" href="#popup-2">
-                            <div>
-                                <h3>Project Title</h3>  <span>Photography</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div id="popup-2" class="mfp-hide popup-box">
-                        <%= image_tag 'portfolio-2.jpg'%>
-                        <div>
-                            <h3>Project Title</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla consequat massa quis
-                                enim.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="image-box category-1">
-                    <%= image_tag 'portfolio-3.jpg'%>
-                    <div class="image-hover">
-                        <a id="lightbox" href="#popup-3">
-                            <div>
-                                <h3>Project Title</h3>  <span>Illustrator</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div id="popup-3" class="mfp-hide popup-box">
-                        <%= image_tag 'portfolio-3.jpg'%>
-                        <div>
-                            <h3>Project Title</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla consequat massa quis
-                                enim.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="image-box category-2">
-                    <%= image_tag 'portfolio-4.jpg'%>
-                    <div class="image-hover">
-                        <a id="lightbox" href="#popup-4">
-                            <div>
-                                <h3>Project Title</h3>  <span>Photography</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div id="popup-4" class="mfp-hide popup-box">
-                        <%= image_tag 'portfolio-4.jpg'%>
-                        <div>
-                            <h3>Project Title</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla consequat massa quis
-                                enim.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="image-box category-1">
-                    <%= image_tag 'portfolio-5.jpg'%>
-                    <div class="image-hover">
-                        <a id="lightbox" href="#popup-5">
-                            <div>
-                                <h3>Project Title</h3>  <span>Illustrator</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div id="popup-5" class="mfp-hide popup-box">
-                        <%= image_tag 'portfolio-5.jpg'%>
-                        <div>
-                            <h3>Project Title</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla consequat massa quis
-                                enim.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="testimonial">
-    <div class="testimonial-background parallax-section">
-        <div class="black-layer">
-            <div class="container">
-                <div class="row">
-                    <div class="testimonialWrapper col-xs-12 col-sm-6">
-                        <h2>Testimonial</h2>
-                        <div id="testimonialSlider" class="owl-carousel">
-                            <div>
-                                <div class="clientQuote">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                                    <div class="client-img">
-                                        <%= image_tag 'client-1.jpg'%>
-                                        <div>
-                                            <h4>David Burke</h4>  <span>CEO / Founder of Company</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="clientQuote">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                                    <div class="client-img">
-                                        <%= image_tag 'client-2.jpg'%>
-                                        <div>
-                                            <h4>Katherine Hansen</h4>  <span>CEO / Founder of Company</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="clientQuote">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                                    <div class="client-img">
-                                        <%= image_tag 'client-3.jpg'%>
-                                        <div>
-                                            <h4>Terry Burton</h4>  <span>CEO / Founder of Company</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="factsWrapper" class="col-xs-12 col-sm-6">
-                        <h2>Fun Facts</h2>
-                        <div class="row">
-                            <div class="fact-box col-xs-12 col-sm-6">
-                                <div> <i class="fa fa-bicycle"></i>
-                                </div>
-                                <div>
-                                    <p data-to="72" data-append="+"></p>
-                                    <h4>Hours of Cycling</h4>
-                                </div>
-                            </div>
-                            <div class="fact-box col-xs-12 col-sm-6">
-                                <div> <i class="fa fa-diamond"></i>
-                                </div>
-                                <div>
-                                    <p data-to="10" data-append="+"></p>
-                                    <h4>Projects Done</h4>
-                                </div>
-                            </div>
-                            <div class="clearfix visible-sm-block"></div>
-                            <div class="fact-box col-xs-12 col-sm-6">
-                                <div> <i class="fa fa-lightbulb-o"></i>
-                                </div>
-                                <div>
-                                    <p data-to="100" data-append="+"></p>
-                                    <h4>New Ideas</h4>
-                                </div>
-                            </div>
-                            <div class="fact-box col-xs-12 col-sm-6">
-                                <div> <i class="fa fa-smile-o"></i>
-                                </div>
-                                <div>
-                                    <p data-to="300" data-append="+"></p>
-                                    <h4>Happy Clients</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="contact">
-    <div class="contact-background">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="row">
-                <div class="contact-form col-xs-12 col-sm-6">
-                    <form method="post" id="contactform">
-                        <div class="input-style">
-                            <input type="text" id="name" name="name" placeholder="Name">
-                        </div>
-                        <div class="input-style">
-                            <input type="email" id="email" name="email" placeholder="E-Mail">
-                        </div>
-                        <div class="text-style">
-                            <textarea name="message" id="message" placeholder="Message"></textarea>
-                        </div>
-                        <input type="submit" id="submit" class="submit-style" name="submit" value="Send Message">
-                        <div class="submit-result">
-                            <p id="success">Your Message has been sent!</p>
-                            <p id="error">Something went wrong, go back and try again!</p>
-                        </div>
-                    </form>
-                </div>
-                <div class="info col-xs-12 col-sm-6">
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae tristique dolor. Phasellus enim justo, aliquam laoreet condimentum id, volutpat a urna. Aliquam auctor lorem eu magna sodales, eget tincidunt magna gravida.
-                            Mauris ut laoreet ipsum. In consequat sagittis accumsan.</p>
-                    </div>
-                    <ul>
-                        <li>
-                            <h3>Address</h3>
-                            <p>Street Road, City name, 123 45</p>
-                        </li>
-                        <li>
-                            <h3>Phone</h3>
-                            <p>+(987) 654 321 01</p>
-                        </li>
-                        <li>
-                            <h3>Email</h3>
-                            <p>kevin.walters@gmail.com</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="map-canvas"></div>
-</section>
-<footer>
-    <div class="footer-background">
-        <div class="container">
-            <ul>
-                <li><a href="#">Facebook</a>
-                </li>
-                <li><a href="#">Twitter</a>
-                </li>
-                <li> <a href="#">Instagram</a>
-                </li>
-                <li><a href="#">Linkedin</a>
-                </li>
-            </ul>
-            <p>Made by <a href="http://themeforest.net/user/FlaTheme">FlaTheme</a>
-            </p>
-        </div>
-    </div>
-</footer>
+<a id="back-to-top" href="#" class="visible">
+				<i class="fa fa-plus"></i>
+
+        <i class="fa fa-linkedin"></i> or <i class="fa fa-github"></i>
+			</a>

@@ -14,6 +14,9 @@ class ApplicationController < ActionController::Base
       @current_user ||= User.find(session[:user_id]) if session[:user_id]
     end
 
+    def login_user user
+      session[:user_id] = user.id
+    end
     # rescue_from ::ActiveRecord::RecordNotFound, with: :record_not_found
     # rescue_from ::NameError, with: :error_occurred
     # rescue_from ::ActionController::RoutingError, with: :no_route_found
@@ -28,7 +31,7 @@ class ApplicationController < ActionController::Base
     def xeditable? object = nil
       true # Or something like current_user.xeditable?
     end
-    
+
   protected
     def record_not_found(exception)
       flash[:notice] = exception.message.to_s

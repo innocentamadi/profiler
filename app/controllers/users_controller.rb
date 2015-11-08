@@ -1,5 +1,25 @@
 class UsersController < ApplicationController
 
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = params[:user] ? User.new(params[:user]) : User.new_guest
+    if @user.save
+      current_user.assign_other_guest_records_to(@user) if current_user && current_user.guest?
+      login_user(@user)
+      redirect_to user_path(@user)
+    else
+      flash[:error] = "Could not create account. Please try again."
+      redirect_to root_url
+    end
+  end
+
+  def show
+    @user = current_user || params[:user]
+    redirect_to root_url if !@user
+  end
 
   def edit_user
     @option = params[:option]

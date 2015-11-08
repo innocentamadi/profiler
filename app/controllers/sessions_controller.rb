@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.from_omniauth(@omniauth_response)
     User.fetch_repo(@omniauth_response.info.nickname, user.id)
 
-    session[:user_id] = user.id
+    login_user(user)
     if env['omniauth.origin'].nil?
       redirect_to root_url
     else
