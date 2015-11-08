@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     User.fetch_repo(@omniauth_response.info.nickname, user_id) if @omniauth_response.provider == 'github'
     user.create_linkedin_profile(@omniauth_response.credentials) if @omniauth_response.provider == 'linkedin' && user.basic_profile.nil?
 
-    session[:user_id] = user_id
+    login_user(user)
     if env['omniauth.origin'].nil?
       redirect_to root_url
     else

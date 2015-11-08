@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20151108154819) do
     t.string   "oauth_token_expires"
     t.string   "provider"
     t.string   "email"
+    t.boolean  "guest"
   end
 
 end

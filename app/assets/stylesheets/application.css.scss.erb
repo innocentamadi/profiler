@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require editable/bootstrap-editable
  *= require_tree .
  *= require_self
  */
@@ -18,3 +19,14 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "welcome";
+
+
+a.edit_link {
+  width: auto !important;
+  height: auto !important;
+  position: relative !important;
+  border: none !important;
+  &:hover {
+    padding: 10px;
+  }
+}

@@ -18,15 +18,28 @@
                    <li class="hidden">
                        <a href="#page-top"></a>
                    </li>
-                   <li>
-                       <%= link_to "Login", login_path, {:remote => true, class: "page-scroll", "data-target" => "#myModal", "data-toggle" => "modal" } %>
-                   </li>
-                   <li>
-                       <%= link_to "Signup", "#", class: "page-scroll" %>
-                   </li>
-                   <li>
-                       <%= link_to "View Sample", "#", class: "page-scroll" %>
-                   </li>
+                   <% if current_user %>
+                     Logged in as <strong><%= current_user.name %></strong>
+                  <% end %>
+
+                    <% if current_user && !current_user.guest? %>
+                      <li>
+                          <%= link_to "My Profile", user_path(current_user.id), class: "page-scroll" %>
+                      </li>
+                      <li><%= link_to "Log Out", signout_path %></li>
+                    <% else %>
+                      <li><%= link_to "Try as Guest", new_guest_path %></li>
+
+                      <li>
+                          <%= link_to "Login / Signup", login_path, {:remote => true, class: "page-scroll", "data-target" => "#myModal", "data-toggle" => "modal" } %>
+                      </li>
+
+                      <li>
+                          <%= link_to "View Sample profiles", "#", class: "page-scroll" %>
+                      </li>
+                    <% end %>
+
+
                </ul>
            </div>
            <!-- /.navbar-collapse -->

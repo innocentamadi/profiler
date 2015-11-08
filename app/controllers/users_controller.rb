@@ -1,5 +1,34 @@
 class UsersController < ApplicationController
+  before_filter :current_user, :except => [:new]
 
+  def index
+    if current_user
+      redirect_to user_path(@current_user.id)
+    else
+      redirect_to root_path
+    end
+  end
+
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = params[:user] ? User.new(params[:user]) : User.new_guest
+    if @user.save
+      current_user.assign_other_guest_records_to(@user) if current_user && current_user.guest?
+      login_user(@user)
+      redirect_to user_path(@user)
+    else
+      flash[:error] = "Could not create account. Please try again."
+      redirect_to root_url
+    end
+  end
+
+  def show
+    @user = current_user || User.find_by_id(params[:id])
+    redirect_to root_url if !@user
+  end
 
   def edit_user
     @option = params[:option]
@@ -16,6 +45,14 @@ class UsersController < ApplicationController
     end
   end
 
+
+  private
+
+
+  def user_params
+    # pry.binding
+    params.require(:user).permit(:avatar, :username, :gender, :first_name, :middle_name, :last_name, :bio, :username, :email, :password, :password_confirmation, :option, :fullname) if params.has_key? "user"
+  end
 
   def update_user_info
     if @option == "fullname"
