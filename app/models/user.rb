@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   end
 
    def fullname
-     ("#{first_name}" ' ' "#{last_name}".capitalize if first_name && last_name.present?) || ("Guest".capitalize if guest) || "Type your full name here"
+     ("#{first_name}" ' ' "#{last_name}".capitalize if first_name && last_name.present?) || ("Guest".capitalize if guest) || nil
    end
 
     def self.new_guest

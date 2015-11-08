@@ -1,7 +1,7 @@
 <% if @current_user %>
   <% option ||= @option.nil? ? "fullname" : @option %>
-    <div class="edits user_<%= option %>">
-      <%=link_to @current_user.fullname, user_js_edit_path(@current_user.id, "#{option}"), class: "edit_link", remote: :true %>
+    <div class=" user_<%= option %>">
+      <%=link_to @current_user.fullname || "Type your full name here", user_js_edit_path(@current_user.id, "#{option}"), class: "edit_link", remote: :true %>
     </div>
 <% else %>
   <%= @user.fullname %>

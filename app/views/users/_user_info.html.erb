@@ -1,5 +1,5 @@
 <% option ||= "" %>
-<div id="user_<%= option %>">
+<div id="user_<%= option %>" class="user-edits">
   <% if @user[option] %>
    <%= render partial: "current_user_prop", locals: {option: option} %>
   <% else %>

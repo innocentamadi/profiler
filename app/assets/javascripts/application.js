@@ -20,7 +20,13 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $('.editable').editable({mode: "inline"});
+
+  $('#js-edit-text').keypress(function (e) {
+    if (e.which == 13) {
+      $('form#edit_user_form').submit();
+      return false;
+    }
+  });
 
   $('body').on('DOMNodeInserted', '#js-edit-text', function () {
     $("#submit-js-edit").hide();

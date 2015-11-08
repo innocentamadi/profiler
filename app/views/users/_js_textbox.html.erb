@@ -6,7 +6,7 @@
 %>
 
 <% size = field_to_edit == "fullname" ? {rows: 1} : {} %>
-  <%=form_for request_path, remote: true do |f| %>
+  <%=form_for request_path, html: {id: "edit_user_form"}, remote: true do |f| %>
     <div class="js-textbox">
        <div class="form-group">
          <%= f.text_area(field_to_edit, {class: "form-control", id: "js-edit-text", placeholder: placeholder, value: default_text }.merge(size) ) %>
