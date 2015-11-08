@@ -3,10 +3,11 @@ class SessionsController < ApplicationController
 
   def create
     @omniauth_response = env['omniauth.auth']
-    user = User.from_omniauth(@omniauth_response)
-    User.fetch_repo(@omniauth_response.info.nickname, user.id) if @omniauth_response.provider == 'github'
+    user = current_user || User.from_omniauth(@omniauth_response)
+    user.fetch_repo(@omniauth_response.info.nickname) if @omniauth_response.provider == 'github'
+    user.create_linkedin_profile(@omniauth_response.credentials) if @omniauth_response.provider == 'linkedin' && user.basic_profile.nil?
 
-    session[:user_id] = user.id
+    login_user(user)
     if env['omniauth.origin'].nil?
       redirect_to root_url
     else

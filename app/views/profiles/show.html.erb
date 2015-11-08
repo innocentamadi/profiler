@@ -15,7 +15,13 @@
                         <div class="ewf-span12 text-center">
 
                             <div class="headline">
+                              <div class="btn btn-success">
+                                Connect With LinkedIn
+                              </div>
                                 <h1>CLICK TO TYPE YOUR NAME</h1>
+                                <h1>
+                                <%= render partial: "users/user_info", locals: {option: "fullname"} %>
+                                </h1>
                                 <p><span>Profession Description</span>
                                 </p>
                             </div>
@@ -70,8 +76,8 @@
                                         </div>
                                     </div>
 
-                                    <% 3.times do %>
-                                      <%= render "users/work_experience" %>
+                                    <% @positions.each do |p| %>
+                                      <%= render("users/work_experience", position: p ) %>
                                     <% end %>
                                 </div>
                             </div>
@@ -101,9 +107,9 @@
                     </div>
 
 
-                                                        <% 3.times do %>
-                                                          <%= render "users/work_experience" %>
-                                                        <% end %>
+                                                        <%# 3.times do %>
+                                                          <%#= render "users/work_experience" %>
+                                                        <%# end %>
 
                 </div>
             </div>
