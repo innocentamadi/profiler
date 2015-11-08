@@ -3,9 +3,6 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :xeditable?
-
-
   helper_method :current_user
     protect_from_forgery with: :exception
 
@@ -28,9 +25,6 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
 
-    def xeditable? object = nil
-      true # Or something like current_user.xeditable?
-    end
 
   protected
     def record_not_found(exception)
