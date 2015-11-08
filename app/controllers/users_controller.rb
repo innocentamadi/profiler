@@ -27,6 +27,9 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user || User.find_by_id(params[:id])
+    @basic_profile = @user.basic_profile
+    @positions = @user.positions
+    @repos = @user.repos
     redirect_to root_url if !@user
   end
 
@@ -50,7 +53,6 @@ class UsersController < ApplicationController
 
 
   def user_params
-    # pry.binding
     params.require(:user).permit(:avatar, :username, :gender, :first_name, :middle_name, :last_name, :bio, :username, :email, :password, :password_confirmation, :option, :fullname) if params.has_key? "user"
   end
 

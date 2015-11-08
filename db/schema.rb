@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 20151108154819) do
 
   add_index "basic_profiles", ["user_id"], name: "index_basic_profiles_on_user_id"
 
+  create_table "linkedin_oauth_settings", force: :cascade do |t|
+    t.string   "token"
+    t.string   "secret"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "linkedin_oauth_settings", ["user_id"], name: "index_linkedin_oauth_settings_on_user_id"
+
   create_table "linkedin_oauths", force: :cascade do |t|
     t.string   "token"
     t.string   "secret"
