@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   respond_to :js, :html
 
   def create
-    user = User.from_omniauth(env['omniauth.auth'])
+    user = #User.from_omniauth(env['omniauth.auth'])
     session[:user_id] = user.id
     if env['omniauth.origin'].nil?
       redirect_to root_url

@@ -11,8 +11,13 @@
         <h4 class="modal-title">Login Form</h4>
       </div>
       <div class="modal-body">
-        <p>Email</p>
-        <p>Password</p>
+        <% sign_in_provider.each do |provider, helper| %>
+          <div class="col-md-5 sso_option">
+            <%= link_to signin_path(provider.to_s), class: "text waves-effect waves-light btn #{helper[:class]}" do %>
+              <%= "#{content_tag :i, nil, class: "fa #{helper[:icon_class]} left"} #{helper[:name]}".html_safe %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
