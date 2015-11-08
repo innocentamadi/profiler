@@ -32,7 +32,7 @@ gem 'activerecord-import'
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem "figaro"
-
+gem 'responders'
 gem 'omniauth-linkedin'
 gem 'omniauth-github'
 gem 'linkedin'
