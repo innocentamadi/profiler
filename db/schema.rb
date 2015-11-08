@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107221445) do
+ActiveRecord::Schema.define(version: 20151108012145) do
 
   create_table "repos", force: :cascade do |t|
     t.string   "name"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20151107221445) do
     t.string   "uid"
     t.string   "oauth_token"
     t.string   "oauth_token_expires"
+    t.string   "provider"
+    t.string   "email"
   end
 
 end
