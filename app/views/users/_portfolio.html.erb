@@ -44,7 +44,8 @@
                                         <div class="portfolio-item-overlay-actions">
 
                                             <a href="http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/11/11.png" class="magnificPopup-gallery portfolio-item-zoom">+</a>
-                                            <a class="portfolio-item-link" data-id="101" href="#project-101">&gt;</a>
+                                            <%= link_to "&gt;".html_safe, repo.url, class: "portfolio-item-link" %>
+                                            <!-- <a class="portfolio-item-link" data-id="101" href="#project-101">&gt;</a> -->
 
                                         </div>
 
@@ -364,10 +365,8 @@
 
                                 <div class="ewf-span6 vc_column_container">
                                     <div class="ewf-wrapper">
-
                                         <div class="wpb_single_image wpb_content_element vc_align_left">
                                             <div class="ewf-wrapper">
-
                                                 <img width="1000" height="665" src="http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/11/1.png" class=" vc_box_border_grey attachment-full" alt="1">
                                             </div>
                                         </div>

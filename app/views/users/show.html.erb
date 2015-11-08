@@ -18,7 +18,7 @@
                                 <h1 class="editable">
                                   <%= render partial: "users/user_info", locals: {option: "fullname"} %>
                                 </h1>
-                                <p><span>Profession Description</span>
+                                <p><span>Professional Description</span>
                                 </p>
                             </div>
                             <!-- end .headline -->
@@ -72,8 +72,8 @@
                                         </div>
                                     </div>
 
-                                    <% 3.times do %>
-                                      <%= render "users/work_experience" %>
+                                    <% @positions.each do |p| %>
+                                      <%= render("users/work_experience", position: p ) %>
                                     <% end %>
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
                 }
             </style>
         </div>
-        <div id="education" class="ewf-row vc_custom_1415888219561 nospacing">
+        <!-- <div id="education" class="ewf-row vc_custom_1415888219561 nospacing">
             <div class="ewf-span12 vc_column_container">
                 <div class="ewf-wrapper">
                     <div class="text-center">
@@ -103,13 +103,13 @@
                     </div>
 
 
-                                                        <% 3.times do %>
-                                                          <%= render "users/work_experience" %>
-                                                        <% end %>
+                                                        <%# 3.times do %>
+                                                          <%#= render "users/work_experience" %>
+                                                        <%# end %>
 
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="ewf-inline-style">
             <style media="all" type="text/css">
                 .vc_custom_1416818165057 {
@@ -117,9 +117,9 @@
             </style>
         </div>
 
-        <%= render "users/references" %>
+        <%#= render "users/references" %>
 
-        <div class="ewf-inline-style">
+        <!-- <div class="ewf-inline-style">
             <style media="all" type="text/css">
                 .vc_custom_1415888636177 {
                     padding-top: 110px !important;
@@ -127,9 +127,9 @@
                     background-color: #f6f6f6 !important;
                 }
             </style>
-        </div>
+        </div> -->
 
-        <div class="ewf-full-width-section nospacing">
+        <!-- <div class="ewf-full-width-section nospacing">
             <div id="skills" class="ewf-row vc_custom_1415888636177">
                 <div class="ewf-span12 vc_column_container">
                     <div class="ewf-wrapper">
@@ -154,13 +154,13 @@
                             </div>
                         </div>
 
-                        <%= render "users/skills" %>
+                        <%#= render "users/skills" %>
 
-                        <%= render "users/interests" %>
+                        <%#= render "users/interests" %>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="ewf-inline-style">
             <style media="all" type="text/css">
                 .vc_custom_1415888829982 {
@@ -169,13 +169,13 @@
                 }
             </style>
         </div>
+    </div>
 
         <%= render "users/portfolio" %>
 
         <%= render "users/contact" %>
         <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-    </div>
     <!-- end #content -->
 
     <div id="footer">
@@ -186,7 +186,7 @@
                 <div class="ewf-span12" id="footer-middle-widget-area-1">
                     <div id="text-2" class="widget widget_text">
                         <div class="textwidget">
-                            <p class="text-center last">Copyright © 2015 John Smith</p>
+                            <p class="text-center last">Copyright © 2015 Profiler</p>
                         </div>
                     </div>
                 </div>

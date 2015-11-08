@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_many :repos
+  has_many :repos, dependent: :destroy
   has_one :basic_profile, dependent: :destroy
   has_many :positions, dependent: :destroy
   has_many :linkedin_oauths, dependent: :destroy
@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
     github = Github.new
     @response = github.repos.list user: github_username
     @response.each do |repo|
-      @repos << Repo.new(name: repo.name, description: repo.description, user_id: user_id)
+      @repos << Repo.new(name: repo.name, description: repo.description, url: repo.html_url, user_id: user_id)
     end
 
     Repo.import @repos

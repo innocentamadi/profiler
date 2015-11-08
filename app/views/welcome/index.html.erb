@@ -18,10 +18,12 @@
                    <li class="hidden">
                        <a href="#page-top"></a>
                    </li>
-                   <% if current_user %>
-                     Logged in as <strong><%= current_user.name %></strong>
-                  <% end %>
 
+                     <% if current_user %>
+                      <li>
+                        <a>Logged in as <strong><%= current_user.name.split[0] %></strong></a>
+                      </li>
+                    <% end %>
                     <% if current_user && !current_user.guest? %>
                       <li>
                           <%= link_to "My Profile", user_path(current_user.id), class: "page-scroll" %>
