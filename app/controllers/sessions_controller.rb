@@ -3,14 +3,8 @@ class SessionsController < ApplicationController
 
   def create
     @omniauth_response = env['omniauth.auth']
-<<<<<<< HEAD
-    user = User.from_omniauth(@omniauth_response)
-    user_id = user.id
-    User.fetch_repo(@omniauth_response.info.nickname, user_id) if @omniauth_response.provider == 'github'
-=======
     user = current_user || User.from_omniauth(@omniauth_response)
     user.fetch_repo(@omniauth_response.info.nickname) if @omniauth_response.provider == 'github'
->>>>>>> 4e7f87c193550794535628a2c1582a79ca2410cd
     user.create_linkedin_profile(@omniauth_response.credentials) if @omniauth_response.provider == 'linkedin' && user.basic_profile.nil?
 
     login_user(user)
