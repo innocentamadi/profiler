@@ -3,6 +3,12 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+<<<<<<< HEAD
+=======
+  helper_method :xeditable?
+
+
+>>>>>>> 4e7f87c193550794535628a2c1582a79ca2410cd
   helper_method :current_user
     protect_from_forgery with: :exception
 
@@ -25,7 +31,6 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
 
-
   protected
     def record_not_found(exception)
       flash[:notice] = exception.message.to_s
@@ -45,4 +50,6 @@ class ApplicationController < ActionController::Base
         redirect_to (root_path)
       end
     end
+
+
 end

@@ -27,9 +27,17 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user || User.find_by_id(params[:id])
+<<<<<<< HEAD
     @basic_profile = @user.basic_profile
     @positions = @user.positions
     @repos = @user.repos
+=======
+    if @user
+      @basic_profile = @user.basic_profile
+      @positions = @user.positions.decorate
+      @repos = @user.repos
+    end
+>>>>>>> 4e7f87c193550794535628a2c1582a79ca2410cd
     redirect_to root_url if !@user
   end
 
@@ -53,7 +61,11 @@ class UsersController < ApplicationController
 
 
   def user_params
+<<<<<<< HEAD
     params.require(:user).permit(:avatar, :username, :gender, :first_name, :middle_name, :last_name, :dob, :nationality, :address, :phone_number, :bio, :username, :email, :password, :password_confirmation, :option, :fullname) if params.has_key? "user"
+=======
+    params.require(:user).permit(:avatar, :username, :gender, :first_name, :middle_name, :last_name, :bio, :username, :email, :password, :password_confirmation, :option, :fullname) if params.has_key? "user"
+>>>>>>> 4e7f87c193550794535628a2c1582a79ca2410cd
   end
 
   def update_user_info

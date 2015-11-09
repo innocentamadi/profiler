@@ -18,7 +18,8 @@
                                 <h1 class="editable">
                                   <%= render partial: "users/user_info", locals: {option: "fullname"} %>
                                 </h1>
-                                <p><span><%= (@basic_profile.headline if @basic_profile) || "Your Occupation" %></span>
+                                <p>
+                                  <span><%= (@basic_profile.headline if @basic_profile) || "Your Occupation" %></span>
                                 </p>
                             </div>
                             <!-- end .headline -->
@@ -92,6 +93,7 @@
             </style>
         </div>
         <div id="education" class="ewf-row vc_custom_1415888219561 nospacing">
+        <!-- <div id="education" class="ewf-row vc_custom_1415888219561 nospacing">
             <div class="ewf-span12 vc_column_container">
                 <div class="ewf-wrapper">
                     <div class="text-center">
@@ -101,15 +103,9 @@
                             <h1>Education</h1>
                         </div>
                     </div>
-
-<!--
-                                                        <% 3.times do %>
-                                                          <%#= render "users/work_experience" %>
-                                                        <% end %> -->
-
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="ewf-inline-style">
             <style media="all" type="text/css">
                 .vc_custom_1416818165057 {
@@ -117,9 +113,9 @@
             </style>
         </div>
 
-        <%= render "users/references" %>
+        <%#= render "users/references" %>
 
-        <div class="ewf-inline-style">
+        <!-- <div class="ewf-inline-style">
             <style media="all" type="text/css">
                 .vc_custom_1415888636177 {
                     padding-top: 110px !important;
@@ -130,6 +126,7 @@
         </div>
 
         <div class="ewf-full-width-section nospacing">
+
             <div id="skills" class="ewf-row vc_custom_1415888636177">
                 <div class="ewf-span12 vc_column_container">
                     <div class="ewf-wrapper">
@@ -154,12 +151,20 @@
                             </div>
                         </div>
 
-                        <%= render "users/skills" %>
+                        <%#= render "users/skills" %>
 
-                        <%= render "users/interests" %>
+                        <%#= render "users/interests" %>
                     </div>
                 </div>
             </div>
+        </div> -->
+        <div class="ewf-inline-style">
+            <style media="all" type="text/css">
+                .vc_custom_1415888829982 {
+                    padding-top: 110px !important;
+                    padding-bottom: 80px !important;
+                }
+            </style>
         </div>
         <div class="ewf-inline-style">
             <style media="all" type="text/css">
@@ -176,6 +181,12 @@
         <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
     </div>
+
+        <%= render "users/portfolio" %>
+
+        <%= render "users/contact" %>
+        <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
     <!-- end #content -->
 
     <div id="footer">
@@ -186,7 +197,7 @@
                 <div class="ewf-span12" id="footer-middle-widget-area-1">
                     <div id="text-2" class="widget widget_text">
                         <div class="textwidget">
-                            <p class="text-center last">Copyright © 2015 John Smith</p>
+                            <p class="text-center last">Copyright © 2015 Profiler</p>
                         </div>
                     </div>
                 </div>
@@ -200,7 +211,7 @@
 </div>
 <a id="back-to-top" href="#" class="visible">
 	<i class="fa fa-plus"></i>
-  <!-- <i class="fa fa-linkedin"></i> or <i class="fa fa-github"></i> -->
+  <i class="fa fa-linkedin"></i> or <i class="fa fa-github"></i>
   <ul>
     <% sign_in_provider.each do |provider, helper| %>
       <li>

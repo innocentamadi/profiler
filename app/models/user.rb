@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
+<<<<<<< HEAD
 
   has_many :repos
+=======
+  serialize :languages, Array
+  has_many :repos, dependent: :destroy
+>>>>>>> 4e7f87c193550794535628a2c1582a79ca2410cd
   has_one :basic_profile, dependent: :destroy
   has_many :positions, dependent: :destroy
   has_many :linkedin_oauths, dependent: :destroy
@@ -22,6 +27,7 @@ class User < ActiveRecord::Base
     end
   end
 
+<<<<<<< HEAD
   def self.fetch_repo(github_username, user_id)
     @repos = []
     github = Github.new
@@ -29,6 +35,19 @@ class User < ActiveRecord::Base
     @response.each do |repo|
       @repos << Repo.new(name: repo.name, description: repo.description, user_id: user_id)
     end
+=======
+  def fetch_repo(github_username)
+    @repos = []
+    github = Github.new
+    lang = []
+    @response = github.repos.list user: github_username
+    @response.each do |repo|
+      @repos << Repo.new(name: repo.name, description: repo.description, url: repo.html_url, forks_url: repo.forks_url, user: self, language: repo.language)
+      lang << repo.language if repo.language
+    end
+    self.languages = lang.uniq
+    self.save
+>>>>>>> 4e7f87c193550794535628a2c1582a79ca2410cd
 
     Repo.import @repos
   end
@@ -69,7 +88,11 @@ class User < ActiveRecord::Base
       Position.import(all_positions)
   end
    def fullname
+<<<<<<< HEAD
      ("#{first_name}" ' ' "#{last_name}".capitalize if first_name && last_name.present?) || ("Guest".capitalize if guest) || nil
+=======
+     ("#{first_name}" ' ' "#{last_name}".capitalize if first_name && last_name.present?) || ("Guest".capitalize if guest) || "Type your full name here"
+>>>>>>> 4e7f87c193550794535628a2c1582a79ca2410cd
    end
 
     def self.new_guest

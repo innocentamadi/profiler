@@ -16,10 +16,9 @@
 !/log/.keep
 /tmp
 
-<<<<<<< HEAD
 # Ignore application configuration
 /config/application.yml
-=======
 .DS_Store
 */.DS_Store
->>>>>>> 9ade81c93036777ca4761f7ce006c7a798c26b06
+
+codesnip

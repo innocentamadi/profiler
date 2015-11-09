@@ -6,9 +6,16 @@
                     <div class="ewf-span3">
 
                         <!-- // Logo // -->
+<<<<<<< HEAD
                         <a hrer="#" id="logo" class="fullname">
                             <%= @user.fullname || "No name yet" %>
                         </a>
+=======
+                        <!-- <a href="http://bitpublimedia.ro/themeforest/versus-resume-wp/" id="logo">
+                            John Smith
+                        </a> -->
+                        <%= link_to @user.first_name, user_path(@user), id: 'logo' %>
+>>>>>>> 4e7f87c193550794535628a2c1582a79ca2410cd
 
                     </div>
                     <!-- end .ewf-span3 -->
@@ -20,6 +27,12 @@
 
                         <!-- // Menu // -->
                         <ul id="menu" class="sf-menu fixed sf-js-enabled">
+<<<<<<< HEAD
+=======
+                              <%#= link_github %>
+                              <%= unlinked_account if current_user == @user %>
+
+>>>>>>> 4e7f87c193550794535628a2c1582a79ca2410cd
                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20 active">
                                 <a title="Personal Details" href="#personal-details" rel="page-20">
                                     <span>Personal Details</span>
@@ -30,6 +43,7 @@
                                     <span>Experience</span>
                                 </a>
                             </li>
+<<<<<<< HEAD
                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22">
                                 <a title="Education" href="#education" rel="page-22">
                                     <span>Education</span>
@@ -45,6 +59,23 @@
                                     <span>Skills</span>
                                 </a>
                             </li>
+=======
+                            <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22">
+                                <a title="Education" href="#education" rel="page-22">
+                                    <span>Education</span>
+                                </a>
+                            </li> -->
+                            <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23">
+                                <a title="References" href="#references" rel="page-23">
+                                    <span>References</span>
+                                </a>
+                            </li> -->
+                            <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24">
+                                <a title="Skills" href="#skills" rel="page-24">
+                                    <span>Skills</span>
+                                </a>
+                            </li> -->
+>>>>>>> 4e7f87c193550794535628a2c1582a79ca2410cd
                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25">
                                 <a title="Portfolio" href="#portfolio" rel="page-25">
                                     <span>Portfolio</span>
