@@ -13,16 +13,16 @@
                         <div class="ewf-span12">
                             <div class="portfolio-filter text-center">
                                 <ul>
-                                    <li><a class="active" href="#" data-items="9" data-filter="*" data-term="all">All</a>
-                                    </li>
-                                    <li><a data-term="graphic-design" data-items="5" data-filter=".graphic-design" href="#">Graphic Design</a>
-                                    </li>
-                                    <li><a data-term="logo" data-items="3" data-filter=".logo" href="#">Logo</a>
-                                    </li>
-                                    <li><a data-term="photography" data-items="6" data-filter=".photography" href="#">Photography</a>
-                                    </li>
-                                    <li><a data-term="video" data-items="5" data-filter=".video" href="#">Video</a>
-                                    </li>
+                                    <li><a class="active" href="#" data-items="9" data-filter="*" data-term="all">All</a></li>
+                                    <% @user.languages.each do |language|%>
+                                      <%= content_tag :li do %>
+                                        <%= link_to language, '#', data: {term: language, filter: ".#{language.downcase}"}%>
+                                      <% end %>
+                                    <% end %>
+
+                                    <!-- <li><a data-term="graphic-design" data-items="5" data-filter=".graphic-design" href="#">Graphic Design</a>
+
+                                    </li> -->
                                 </ul>
                             </div>
                             <!-- end .portfolio-filter -->
@@ -32,19 +32,23 @@
                       <% index = 0 %>
                       <% @user.repos.each do |repo|%>
                         <% index += 1%>
-                        <li data-id="101" class="item photography video" style="">
+                        <li data-id="101" class="item <%= repo.language.downcase %> video" style="">
 
                             <div class="portfolio-item">
 
                                 <div class="portfolio-item-preview">
                                     <img src="http://loremflickr.com/328/380?random=<%= index +1%>" alt="">
+                                    <img src="<%= template_list.sample[1] %>" alt="">
 
                                     <div class="portfolio-item-overlay">
 
                                         <div class="portfolio-item-overlay-actions">
 
-                                            <a href="http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/11/11.png" class="magnificPopup-gallery portfolio-item-zoom">+</a>
-                                            <a class="portfolio-item-link" data-id="101" href="#project-101">&gt;</a>
+
+                                            <!-- <a href="http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/11/11.png" class="magnificPopup-gallery portfolio-item-zoom">+</a> -->
+                                            <%= link_to "+", repo.forks_url, method: :post ,class: "portfolio-item-zoom"%>
+                                            <%= link_to "&gt;".html_safe, repo.url, class: "portfolio-item-link" %>
+                                            <!-- <a class="portfolio-item-link" data-id="101" href="#project-101">&gt;</a> -->
 
                                         </div>
 
@@ -65,7 +69,7 @@
                             <!-- end .portfolio-item -->
 
                         </li>
-                        <% break if index >= 6 %>
+                        <%# break if index >= 6 %>
                       <% end %>
                     </ul>
                     <div class="ewf-row">
@@ -364,10 +368,8 @@
 
                                 <div class="ewf-span6 vc_column_container">
                                     <div class="ewf-wrapper">
-
                                         <div class="wpb_single_image wpb_content_element vc_align_left">
                                             <div class="ewf-wrapper">
-
                                                 <img width="1000" height="665" src="http://bitpublimedia.ro/themeforest/versus-resume-wp/wp-content/uploads/2014/11/1.png" class=" vc_box_border_grey attachment-full" alt="1">
                                             </div>
                                         </div>

@@ -15,6 +15,10 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap-sprockets";
- @import "bootstrap";
- @import "font-awesome";
+
+
+
+@import url('layout/css/base.css');
+@import url('layout/css/grid.css');
+@import url('layout/css/elements.css');
+@import url('layout/css/layout.css');

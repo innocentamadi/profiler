@@ -3,9 +3,12 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+<<<<<<< HEAD
+=======
   helper_method :xeditable?
 
 
+>>>>>>> 4e7f87c193550794535628a2c1582a79ca2410cd
   helper_method :current_user
     protect_from_forgery with: :exception
 
@@ -26,10 +29,6 @@ class ApplicationController < ActionController::Base
     def no_route_found
       flash[:notice] = "Invalid address!"
       redirect_to root_path
-    end
-
-    def xeditable? object = nil
-      true # Or something like current_user.xeditable?
     end
 
   protected
